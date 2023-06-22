@@ -38,7 +38,9 @@ The Performance App is a Python program built using the PySimpleGUI library and 
     ```shell
     python PerformanceApp.py
 
-**Text** OR BY RUNNING THE 'performanceapp.exe' FILE THAT IS LOCATED WITHIN THE 'dist' FOLDER
+**Text** 
+
+OR BY RUNNING THE 'performanceapp.exe' FILE THAT IS LOCATED WITHIN THE 'dist' FOLDER
 
 
 2. Enter the unit code and result in the corresponding input fields.
