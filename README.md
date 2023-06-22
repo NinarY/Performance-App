@@ -30,6 +30,7 @@ The Performance App is a Python program built using the PySimpleGUI library and 
     ```shell
    pip install PySimpleGUI
    pip install matplotlib
+   pip install numpy
 
 ## Usuage
 

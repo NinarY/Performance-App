@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import os
+import numpy as np
 
 def update_figure(data, threshold_value, threshold_enabled):
     axes = fig.axes[0]
@@ -42,33 +43,48 @@ def update_figure(data, threshold_value, threshold_enabled):
     # Add major and minor grid lines
     axes.grid(True, which='major', color='gray', linewidth=0.8)
 
+    # Set y-axis tick labels with a smaller step size
+    axes.set_yticks(np.arange(0, max(y) + 10, 10))
+
     figure_canvas_agg.draw()
 
 
 sg.theme('DarkTeal6')
 table_content = []
 layout = [
-    [sg.Text('Unit Code:', font=('Helvetica', 12)), sg.Input(key='-UNITCODE-', size=(10, 1))],
-    [sg.Text('Result:', font=('Helvetica', 12)), sg.Input(key='-RESULT-', size=(10, 1))],
-    [sg.Button('Submit', button_color=('white', 'green'), font=('Helvetica', 12, 'bold')),
-     sg.Button('Delete', button_color=('white', 'red'), font=('Helvetica', 12, 'bold'))],
-    [sg.Stretch(), sg.Table(
-        headings=['Unit Code', 'Result'],
-        values=table_content,
-        expand_x=True,
-        hide_vertical_scroll=True,
-        key='-TABLE-',
-        background_color='#f0f0f0',  # Light gray
-        text_color='black'),  # Black text color
-     sg.Stretch()],
+    [
+        sg.Column(
+            [
+                [sg.Text('Unit Code:', font=('Helvetica', 12)), sg.Input(key='-UNITCODE-', size=(10, 1))],
+                [sg.Text('Result:', font=('Helvetica', 12)), sg.Input(key='-RESULT-', size=(10, 1))],
+                [sg.Button('Submit', button_color=('white', 'green'), font=('Helvetica', 12, 'bold')),
+                 sg.Button('Delete', button_color=('white', 'red'), font=('Helvetica', 12, 'bold'))]
+            ]
+        ),
+        sg.Column(
+            [
+                [sg.Table(
+                    headings=['Unit Code', 'Result'],
+                    values=table_content,
+                    expand_x=True,
+                    hide_vertical_scroll=True,
+                    key='-TABLE-',
+                    background_color='#f0f0f0',  # Light gray
+                    text_color='black'  # Black text color
+                )]
+            ],
+            expand_x=True
+        )
+    ],
     [sg.Canvas(key='-CANVAS-')],
     [sg.Checkbox('Enable Threshold', key='-ENABLE_THRESHOLD-', enable_events=True),
-     sg.Text('Threshold:', font=('Helvetica', 12)), sg.Input(key='-THRESHOLD_VALUE-', size=(10, 1), default_text='49', enable_events=True)],
+     sg.Text('Threshold:', font=('Helvetica', 12)),
+     sg.Input(key='-THRESHOLD_VALUE-', size=(10, 1), default_text='49', enable_events=True)],
     [sg.Button('Export as PNG', button_color=('white', 'green'), size=(15, 1), font=('Helvetica', 12, 'bold'))]
 ]
 
 window_layout = [
-    [sg.Column(layout, size=(800, 600), scrollable=True, expand_x=True, expand_y=True)],
+    [sg.Column(layout, size=(800, 600), scrollable=True, expand_x=True, expand_y=True)]
 ]
 
 # Set the path to the favicon file
