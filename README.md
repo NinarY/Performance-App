@@ -38,6 +38,9 @@ The Performance App is a Python program built using the PySimpleGUI library and 
     ```shell
     python PerformanceApp.py
 
+**Text** OR BY RUNNING THE 'performanceapp.exe' FILE THAT IS LOCATED WITHIN THE 'dist' FOLDER
+
+
 2. Enter the unit code and result in the corresponding input fields.
 
 3. Click the Submit button to add the data to the table and update the chart.
@@ -49,6 +52,8 @@ The Performance App is a Python program built using the PySimpleGUI library and 
 6. Adjust the chart as needed by resizing the window or scrolling horizontally.
 
 7. Click the Export as PNG button to save the chart as a PNG file.
+
+
 
 
 
