@@ -1,6 +1,6 @@
 # Performance App
 
-The Performance App is a Python program built using the PySimpleGUI library and matplotlib. It allows users to input unit codes and corresponding results, visualize the performance using bar and line charts, and export the visualization as a PNG file.
+The Performance App is a Python program built using the PySimpleGUI library and matplotlib. It allows users to input unit codes and corresponding results, visualize the performance using bar and line charts, and export the graph as a PNG file.
 
 ## Features
 
