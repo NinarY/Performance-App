@@ -11,11 +11,13 @@ The Performance App is a Python program built using the PySimpleGUI library and 
 
 ## Screenshots
 
-![Getting Started](./Screenshots/draft01.png)
+![Getting Started](./Screenshots/draft05.png)
 
-![Getting Started](./Screenshots/draft02.png)
+![Getting Started](./Screenshots/draft06.png)
 
-![Getting Started](./Screenshots/draft03.png)
+![Getting Started](./Screenshots/draft08.png)
+
+![Getting Started](./Screenshots/draft07.png)
 
 
 ## Installation
